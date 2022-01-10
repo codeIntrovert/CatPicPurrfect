@@ -10,7 +10,7 @@ auth.set_access_token(ACCESS_TOKEN,ACCESS_SECRET)
 API = tweepy.API(auth, wait_on_rate_limit = True)
 
 def tweeter():
-    search = '#codenewbie'
+    search = '#100DaysOfCode'
     nrTweets = 50
     count = 0
     for tweet in tweepy.Cursor(API.search_tweets, search).items(nrTweets):
