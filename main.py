@@ -16,7 +16,7 @@ def tweeter():
     for tweet in tweepy.Cursor(API.search_tweets, search).items(nrTweets):
         try: 
             tweet.retweet()
-            print(f"retwitter will check again in {REMAP_TIME} sec ")
+            print(f"retwitter will check again in {REMAP_TIME} sec{count}")
             count +=1
             if count%100==0:
                 final_twittes = int(count+1000)
