@@ -17,7 +17,7 @@ def tweeter():
 
         try: 
             tweet.retweet()
-            print(f"retwitter will check again in {REMAP_TIME} sec {count}")
+            print(f"retwitter will check again in {REMAP_TIME} sec {COUNT}")
             time.sleep(REMAP_TIME)
             COUNT +=1
         except Exception as e:
