@@ -10,6 +10,7 @@ auth.set_access_token(ACCESS_TOKEN,ACCESS_SECRET)
 API = tweepy.API(auth, wait_on_rate_limit = True)
 COUNT = int(0)
 def tweeter():
+    global COUNT
     search = '#100DaysOfCode'
     nrTweets = 50
 
