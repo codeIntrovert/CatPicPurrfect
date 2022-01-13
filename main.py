@@ -19,7 +19,7 @@ def tweeter():
 
     for tweet in tweepy.Cursor(API.search_tweets, search).items(nrTweets):
         if COUNT%100==0:
-            final_twittes = int(COUNT+2500)
+            final_twittes = int(COUNT+3500)
             API.update_status(f"WE HAVE OFFICIALLY RETWEETED {final_twittes} TWEETS! \n {HASTAGS}")
             print("announced")
 
