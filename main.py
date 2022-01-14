@@ -3,13 +3,14 @@ import time
 from key import *
 
 '''variable table'''
-REMAP_TIME = 90
+REMAP_TIME = 70
 ERROR_TIME = 5
 auth = tweepy.OAuthHandler(API_KEY,API_SECRET)
 auth.set_access_token(ACCESS_TOKEN,ACCESS_SECRET)
 API = tweepy.API(auth, wait_on_rate_limit = True)
 COUNT = int(1)
 POST_ERROR = int(1)
+CALIBRATE = 4700
 
 def tweeter():
     global COUNT
@@ -18,20 +19,21 @@ def tweeter():
     nrTweets = 30
 
     for tweet in tweepy.Cursor(API.search_tweets, search).items(nrTweets):
-        if COUNT%100==0:
-            final_twittes = int(COUNT+3500)
+        if COUNT%200==0:
+            final_twittes = int(COUNT+CALIBRATE)
             API.update_status(f"WE HAVE OFFICIALLY RETWEETED {final_twittes} TWEETS! \n {HASTAGS}")
             print("announced")
 
         try: 
             tweet.retweet()
+            COUNT +=1
             print(f"next post in {REMAP_TIME} sec; POSTS = {COUNT} ; ERROR = {POST_ERROR}")
             time.sleep(REMAP_TIME)
-            COUNT +=1
+            
         except Exception as e:
+            POST_ERROR +=1
             print(f"ERROR: restart in {ERROR_TIME} secs; POST = {COUNT} ; ERROR = {POST_ERROR} {e}")
             time.sleep(ERROR_TIME)
-            POST_ERROR +=1
             tweeter()
 
 
