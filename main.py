@@ -3,7 +3,7 @@ import time
 from key import *
 
 '''variable table'''
-REMAP_TIME = 85
+REMAP_TIME = 88
 ERROR_TIME = 5
 auth = tweepy.OAuthHandler(API_KEY,API_SECRET)
 auth.set_access_token(ACCESS_TOKEN,ACCESS_SECRET)
