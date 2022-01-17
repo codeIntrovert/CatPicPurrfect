@@ -10,7 +10,7 @@ auth.set_access_token(ACCESS_TOKEN,ACCESS_SECRET)
 API = tweepy.API(auth, wait_on_rate_limit = True)
 COUNT = int(1)
 POST_ERROR = int(1)
-CALIBRATE = 5700
+CALIBRATE = 7500
 
 def tweeter():
     global COUNT
