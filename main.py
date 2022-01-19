@@ -19,7 +19,7 @@ def tweeter():
     nrTweets = 30
 
     for tweet in tweepy.Cursor(API.search_tweets, search).items(nrTweets):
-        if COUNT%2==0:
+        if COUNT%300==0:
             final_twittes = int(COUNT+CALIBRATE)
             API.update_status(f"Please subscribe my youtube channel, i make awesome python projects https://www.youtube.com/introvertCoder \n {HASTAGS}")
             print("announced")
