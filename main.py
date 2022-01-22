@@ -8,7 +8,7 @@ ERROR_TIME = 5
 auth = tweepy.OAuthHandler(API_KEY,API_SECRET)
 auth.set_access_token(ACCESS_TOKEN,ACCESS_SECRET)
 API = tweepy.API(auth, wait_on_rate_limit = True)
-COUNT = int(1)
+COUNT = int(300)
 POST_ERROR = int(1)
 CALIBRATE = 9600
 
