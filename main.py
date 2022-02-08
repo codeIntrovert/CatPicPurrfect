@@ -30,11 +30,14 @@ def tweeter():
             print(f"ERROR: restart in {ERROR_TIME} secs; POST = {COUNT} ; ERROR = {POST_ERROR} {e}")
             time.sleep(ERROR_TIME)
             tweeter()
+            
+        '''
         finally:
             if COUNT%80==0:
                 final_twittes = int(COUNT+CALIBRATE)
                 API.update_status(f"Please subscribe my youtube channel, i make awesome python projects https://www.youtube.com/introvertCoder \n {HASTAGS}")
                 print("announced")
+         '''
 
 
 
