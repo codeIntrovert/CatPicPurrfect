@@ -15,6 +15,7 @@ POST_ERROR = int(1)
 s = open("logFile.txt","a")
 s.write(f"\n\n###___STARTED___###\n\n")
 s.close()
+print("started file writing")
 def tweeter():
     global COUNT
     global POST_ERROR
