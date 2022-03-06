@@ -43,8 +43,8 @@ def tweeter():
         elif "essay" in status.full_text.lower(): # /
             print("FAKE! Essay \n")
             FAKE+=1
-        elif "courses" in status.full_text.lower(): #courses
-            print("FAKE! COURSE\n")
+        elif ".ly" in status.full_text.lower(): #courses
+            print("FAKE! .ly\n")
             FAKE+=1
         elif "free" in status.full_text.lower(): #free
             print("FAKE! FREE\n")
