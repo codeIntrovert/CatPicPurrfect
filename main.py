@@ -52,8 +52,11 @@ def tweeter():
         elif "know more" in status.full_text.lower(): #free
             print("FAKE! KNOW MORE\n")
             FAKE+=1
-        elif ".com" in status.full_text.lower():
+        elif ".com" in status.full_text.lower(): #LINK
             print("FAKE! .COM \n")
+            FAKE+=1
+        elif "whatsapp" in status.full_text.lower(): #Whatsapp
+            print("FAKE! WHATSAPP \n")
             FAKE+=1
 
         else:
