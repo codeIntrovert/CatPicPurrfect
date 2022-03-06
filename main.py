@@ -34,7 +34,7 @@ def tweeter():
     global POST_ERROR
     global FAKE
     tag = ["#100DaysOfCode"]
-    nrTweets = 10000
+    nrTweets = 200
     
     for status in tweepy.Cursor(API.search_tweets, tag,tweet_mode="extended").items(nrTweets):
         if "dm" in status.full_text.lower() : # dm
