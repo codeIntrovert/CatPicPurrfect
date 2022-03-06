@@ -49,7 +49,7 @@ def tweeter():
             time.sleep(ERROR_TIME)
             tweeter()
         finally:
-            if COUNT%200 == 0:
+            if COUNT%80 == 0:
                 qoutesAPI()
 
 tweeter()
