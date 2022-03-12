@@ -5,7 +5,7 @@ import requests
 from key import *
 
 
-REMAP_TIME = 80
+REMAP_TIME = 95
 ERROR_TIME = 5
 auth = tweepy.OAuthHandler(API_KEY,API_SECRET)
 auth.set_access_token(ACCESS_TOKEN,ACCESS_SECRET)
@@ -73,7 +73,7 @@ def tweeter():
                 time.sleep(ERROR_TIME)
                 tweeter()
             finally:
-                if COUNT%150 == 0:
+                if COUNT%160 == 0:
                     qoutesAPI()
 
 tweeter()
