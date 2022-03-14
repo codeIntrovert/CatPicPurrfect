@@ -47,6 +47,8 @@ def tweeter():
             FAKE+=1
         elif "whatsapp" in status.full_text.lower(): #Whatsapp
             FAKE+=1
+        elif "ai" in status.full_text.lower(): #AI
+            FAKE+=1
 
         else:
             try: 
