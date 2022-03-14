@@ -35,7 +35,7 @@ def tweeter():
     tag = "#100DaysOfCode"
     nrTweets = 100
     
-    for status in tweepy.Cursor(API.search_tweets, tag,tweet_mode="extended").items(nrTweets):
+    for status in tweepy.Cursor(API.search_tweets, tag,tweet_mode="extended",lang="en").items(nrTweets):
         if "dm" in status.full_text.lower() : # dm
             print("FAKE! DM")
             FAKE+=1
