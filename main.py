@@ -52,6 +52,8 @@ def tweeter():
         elif "com/" in status.full_text.lower(): #com/
             FAKE+=1
             print("com/")
+        elif "#link" in status.full_text.lower(): #AI
+            FAKE+=1
 
         else:
             try: 
