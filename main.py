@@ -41,20 +41,23 @@ def tweeter():
             FAKE+=1
         elif "essay" in status.full_text.lower(): # /
             FAKE+=1
-        elif "free" in status.full_text.lower(): #free
+        elif "bit.ly" in status.full_text.lower(): #free
             FAKE+=1
         elif "know more" in status.full_text.lower(): #free
             FAKE+=1
         elif "whatsapp" in status.full_text.lower(): #Whatsapp
             FAKE+=1
-        elif "ai" in status.full_text.lower(): #AI
+        elif "buy" in status.full_text.lower(): #buy
             FAKE+=1
-        elif "com/" in status.full_text.lower(): #com/
+        elif "$" in status.full_text.lower(): #$
             FAKE+=1
-            print("com/")
-        elif "#link" in status.full_text.lower(): #AI
+            print("$")
+        elif "fiverr" in status.full_text.lower(): #AI
             FAKE+=1
-
+        elif "link" in status.full_text.lower(): #AI
+            FAKE+=1
+        elif "money" in status.full_text.lower(): #AI
+            FAKE+=1
         else:
             try: 
                 status.retweet()
