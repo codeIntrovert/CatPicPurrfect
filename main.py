@@ -64,7 +64,7 @@ def tweeter():
                 COUNT +=1
                 print(f"next post in {REMAP_TIME} sec; POSTS = {COUNT}; ERROR = {POST_ERROR}; FAKE = {FAKE} ")
                 time.sleep(REMAP_TIME)
-                if COUNT%80 == 0:
+                if COUNT%180 == 0:
                     qoutesAPI()
 
             except Exception as e:
