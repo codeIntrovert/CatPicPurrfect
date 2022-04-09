@@ -32,7 +32,7 @@ def tweeter():
     global COUNT
     global POST_ERROR
     global FAKE
-    tag = "#100DaysOfCode"
+    tag = "#catsoftwitter"
     nrTweets = 100
     
     for status in tweepy.Cursor(API.search_tweets, tag,tweet_mode="extended",lang="en").items(nrTweets):
