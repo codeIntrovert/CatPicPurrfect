@@ -49,15 +49,11 @@ def tweeter():
             FAKE+=1
         elif "buy" in status.full_text.lower(): #buy
             FAKE+=1
-        elif "$" in status.full_text.lower(): #$
-            FAKE+=1
-            print("$")
-        elif "fiverr" in status.full_text.lower(): #AI
+        elif "read more" in status.full_text.lower(): #AI
             FAKE+=1
         elif "link" in status.full_text.lower(): #AI
             FAKE+=1
-        elif "money" in status.full_text.lower(): #AI
-            FAKE+=1
+
         else:
             try: 
                 status.retweet()
