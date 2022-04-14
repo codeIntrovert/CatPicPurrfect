@@ -5,7 +5,7 @@ import requests
 from key import *
 
 
-REMAP_TIME = 95
+REMAP_TIME = 125
 ERROR_TIME = 5
 auth = tweepy.OAuthHandler(API_KEY,API_SECRET)
 auth.set_access_token(ACCESS_TOKEN,ACCESS_SECRET)
@@ -22,7 +22,7 @@ def qoutesAPI():
         quote = thoughtJSON['en']
         author = thoughtJSON['author']
 
-        statement = (f"{quote} - {author} #100daysOfCode #python")
+        statement = (f"{quote} - {author} #100daysOfCode #python #coding #Javascript")
         API.update_status(statement)
     except Exception as t:
         print(f"{t}\nproblem with fetching thought api")
@@ -39,20 +39,11 @@ def tweeter():
         if "dm" in status.full_text.lower() : # dm
             print("FAKE! DM")
             FAKE+=1
-        elif "essay" in status.full_text.lower(): # /
-            FAKE+=1
-        elif "bit.ly" in status.full_text.lower(): #free
-            FAKE+=1
-        elif "know more" in status.full_text.lower(): #free
-            FAKE+=1
         elif "whatsapp" in status.full_text.lower(): #Whatsapp
             FAKE+=1
         elif "buy" in status.full_text.lower(): #buy
             FAKE+=1
-        elif "read more" in status.full_text.lower(): #AI
-            FAKE+=1
-        elif "link" in status.full_text.lower(): #AI
-            FAKE+=1
+
 
         else:
             try: 
@@ -60,7 +51,7 @@ def tweeter():
                 COUNT +=1
                 print(f"next post in {REMAP_TIME} sec; POSTS = {COUNT}; ERROR = {POST_ERROR}; FAKE = {FAKE} ")
                 time.sleep(REMAP_TIME)
-                if COUNT%180 == 0:
+                if COUNT%220 == 0:
                     qoutesAPI()
 
             except Exception as e:
