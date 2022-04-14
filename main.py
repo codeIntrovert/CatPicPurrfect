@@ -32,7 +32,7 @@ def tweeter():
     global COUNT
     global POST_ERROR
     global FAKE
-    tag = "#catsoftwitter"
+    tag = "cat"
     nrTweets = 100
     
     for status in tweepy.Cursor(API.search_tweets, tag,tweet_mode="extended",lang="en").items(nrTweets):
@@ -43,8 +43,10 @@ def tweeter():
             FAKE+=1
         elif "buy" in status.full_text.lower(): #buy
             FAKE+=1
-
-
+        elif "doja" in status.full_text.lower(): #buy
+            FAKE+=1
+        elif "music" in status.full_text.lower(): #buy
+            FAKE+=1
         else:
             try: 
                 status.retweet()
