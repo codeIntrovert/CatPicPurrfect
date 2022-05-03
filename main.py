@@ -1,7 +1,7 @@
 import tweepy
-import time
-import json 
-import requests
+from time import sleep
+from json import loads
+from request import get
 from key import *
 
 
@@ -16,8 +16,8 @@ FAKE = int(0)
 def qoutesAPI():
     try:
         fetchapi = "https://programming-quotes-api.herokuapp.com/Quotes/random"
-        response = requests.get(fetchapi)
-        thoughtJSON = json.loads(response.text)
+        response = get(fetchapi)
+        thoughtJSON = loads(response.text)
 
         quote = thoughtJSON['en']
         author = thoughtJSON['author']
@@ -28,12 +28,11 @@ def qoutesAPI():
         print(f"{t}\nproblem with fetching thought api")
 
 def tweeter():
-    global fetchapi
     global COUNT
     global POST_ERROR
     global FAKE
     tag = "#catsoftwitter"
-    nrTweets = 100
+    nrTweets = 50
     
     for status in tweepy.Cursor(API.search_tweets, tag,tweet_mode="extended",lang="en").items(nrTweets):
         if "dm" in status.full_text.lower() : # dm
@@ -49,14 +48,14 @@ def tweeter():
                 status.retweet()
                 COUNT +=1
                 print(f"next post in {REMAP_TIME} sec; POSTS = {COUNT}; ERROR = {POST_ERROR}; FAKE = {FAKE} ")
-                time.sleep(REMAP_TIME)
+                sleep(REMAP_TIME)
                 if COUNT%220 == 0:
                     qoutesAPI()
 
             except Exception as e:
                 POST_ERROR +=1
                 print(f"ERROR: restart in {ERROR_TIME} secs; POST = {COUNT}; ERROR = {POST_ERROR}; FAKE = {FAKE} {e}")
-                time.sleep(ERROR_TIME)
+                sleep(ERROR_TIME)
                 tweeter()
 
 
