@@ -35,10 +35,8 @@ def tweeter():
     nrTweets = 50
     
     for status in tweepy.Cursor(API.search_tweets, tag,tweet_mode="extended",lang="en").items(nrTweets):
-        if "dm" in status.full_text.lower() : # dm
+        if "whatsapp" in status.full_text.lower() : # dm
             print("FAKE! DM")
-            FAKE+=1
-        elif "whatsapp" in status.full_text.lower(): #Whatsapp
             FAKE+=1
         elif "buy" in status.full_text.lower(): #buy
             FAKE+=1
@@ -47,14 +45,14 @@ def tweeter():
                 status.create_favorite()
                 status.retweet()
                 COUNT +=1
-                print(f"next post in {REMAP_TIME} sec; POSTS = {COUNT}; ERROR = {POST_ERROR}; FAKE = {FAKE} ")
+                print(f"LateSet next post in {REMAP_TIME} sec; POSTS = {COUNT}; ERROR = {POST_ERROR}; FAKE = {FAKE} ")
                 sleep(REMAP_TIME)
                 if COUNT%220 == 0:
                     qoutesAPI()
 
             except Exception as e:
                 POST_ERROR +=1
-                print(f"ERROR: restart in {ERROR_TIME} secs; POST = {COUNT}; ERROR = {POST_ERROR}; FAKE = {FAKE} {e}")
+                print(f"LateSet ERROR: restart in {ERROR_TIME} secs; POST = {COUNT}; ERROR = {POST_ERROR}; FAKE = {FAKE} {e}")
                 sleep(ERROR_TIME)
                 tweeter()
 
