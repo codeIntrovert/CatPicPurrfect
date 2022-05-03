@@ -43,12 +43,9 @@ def tweeter():
             FAKE+=1
         elif "buy" in status.full_text.lower(): #buy
             FAKE+=1
-        elif "doja" in status.full_text.lower(): #buy
-            FAKE+=1
-        elif "music" in status.full_text.lower(): #buy
-            FAKE+=1
         else:
-            try: 
+            try:
+                status.create_favorite()
                 status.retweet()
                 COUNT +=1
                 print(f"next post in {REMAP_TIME} sec; POSTS = {COUNT}; ERROR = {POST_ERROR}; FAKE = {FAKE} ")
