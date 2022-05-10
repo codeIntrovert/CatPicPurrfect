@@ -5,14 +5,13 @@ from requests import get
 from key import *
 
 
-REMAP_TIME = int(125)
-ERROR_TIME = int(5)
+REMAP_TIME , ERROR_TIME = int(125), int(5)
+
 auth = tweepy.OAuthHandler(API_KEY,API_SECRET)
 auth.set_access_token(ACCESS_TOKEN,ACCESS_SECRET)
 API = tweepy.API(auth, wait_on_rate_limit = True)
-COUNT = int(0)
-POST_ERROR = int(0)
-FAKE = int(0)
+COUNT,POST_ERROR,FAKE = int(0),int(0),int(0)
+
 def qoutesAPI():
     try:
         fetchapi = "https://programming-quotes-api.herokuapp.com/Quotes/random"
@@ -42,12 +41,12 @@ def tweeter():
             FAKE+=1
         else:
             try:
-                status.favorite()
                 status.retweet()
+                status.favorite()
                 COUNT +=1
-                print("POSTS = %d ; ERROR = %d ; FAKE = %d "%(COUNT,POST_ERROR,FAKE))
+                print("TIME = %d ; POSTS = %d ; ERROR = %d ; FAKE = %d "%(REMAP_TIME,COUNT,POST_ERROR,FAKE))
                 sleep(REMAP_TIME)
-                if COUNT%200 == 0:
+                if COUNT%150 == 0:
                     qoutesAPI()
 
             except Exception as e:
