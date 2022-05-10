@@ -1,7 +1,7 @@
 import tweepy
 from time import sleep
 from json import loads
-from request import get
+from requests import get
 from key import *
 
 
@@ -42,7 +42,7 @@ def tweeter():
             FAKE+=1
         else:
             try:
-                status.create_favorite()
+                status.favorite()
                 status.retweet()
                 COUNT +=1
                 print("POSTS = %d ; ERROR = %d ; FAKE = %d "%(COUNT,POST_ERROR,FAKE))
