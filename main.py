@@ -34,11 +34,18 @@ def tweeter():
     nrTweets = int(50)
     
     for status in tweepy.Cursor(API.search_tweets, tag,tweet_mode="extended",lang="en").items(nrTweets):
-        if "whatsapp" in status.full_text.lower() : # dm
-            print("FAKE! DM")
+
+        if "whatsapp" in status.full_text.lower() : # blocks whatsapp
             FAKE+=1
-        elif "buy" in status.full_text.lower(): #buy
+        elif "buy" in status.full_text.lower(): #blocks buy
             FAKE+=1
+        elif "know more" in status.full_text.lower(): #blocks knowmore
+            FAKE+=1
+        elif "$" in status.full_text.lower(): #blocks $
+            FAKE+=1
+        elif "nft" in status.full_text.lower(): #blocks nft
+            FAKE+=1
+            
         else:
             try:
                 status.retweet()
