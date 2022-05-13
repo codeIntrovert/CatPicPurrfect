@@ -41,9 +41,9 @@ def tweeter():
             FAKE+=1
         elif "know more" in status.full_text.lower(): #blocks knowmore
             FAKE+=1
-        elif "$" in status.full_text.lower(): #blocks $
+        elif "#crypto" in status.full_text.lower(): #blocks $
             FAKE+=1
-        elif "nft" in status.full_text.lower(): #blocks nft
+        elif "#nft" in status.full_text.lower(): #blocks nft
             FAKE+=1
             
         else:
@@ -51,7 +51,7 @@ def tweeter():
                 status.retweet()
                 status.favorite()
                 COUNT +=1
-                print("TIME = %d ; POSTS = %d ; ERROR = %d ; FAKE = %d "%(REMAP_TIME,COUNT,POST_ERROR,FAKE))
+                print("Latest TIME = %d ; POSTS = %d ; ERROR = %d ; FAKE = %d "%(REMAP_TIME,COUNT,POST_ERROR,FAKE))
                 sleep(REMAP_TIME)
                 if COUNT%150 == 0:
                     qoutesAPI()
