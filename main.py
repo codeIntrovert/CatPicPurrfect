@@ -12,6 +12,7 @@ auth.set_access_token(ACCESS_TOKEN,ACCESS_SECRET)
 API = tweepy.API(auth, wait_on_rate_limit = True)
 COUNT,POST_ERROR,FAKE = int(0),int(0),int(0)
 
+'''
 def qoutesAPI():
     try:
         fetchapi = "https://programming-quotes-api.herokuapp.com/Quotes/random"
@@ -25,6 +26,7 @@ def qoutesAPI():
         API.update_status(statement)
     except Exception as t:
         print(f"{t}\nproblem with fetching thought api")
+'''
 
 def tweeter():
     global COUNT
@@ -52,9 +54,7 @@ def tweeter():
                 status.favorite()
                 COUNT +=1
                 print("Latest TIME = %d ; POSTS = %d ; ERROR = %d ; FAKE = %d "%(REMAP_TIME,COUNT,POST_ERROR,FAKE))
-                sleep(REMAP_TIME)
-                if COUNT%150 == 0:
-                    qoutesAPI()
+                sleep(REMAP_TIME) #call quotesapi here if wanted
 
             except Exception as e:
                 POST_ERROR +=1
