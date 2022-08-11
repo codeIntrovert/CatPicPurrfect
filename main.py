@@ -52,7 +52,7 @@ def tweeter():
         else:
             try:
                 status.retweet()
-                status.favorite()
+                #status.favorite()
                 COUNT +=1
                 print("Latest TIME = %d ; POSTS = %d ; ERROR = %d ; FAKE = %d "%(REMAP_TIME,COUNT,POST_ERROR,FAKE))
                 sleep(REMAP_TIME)
