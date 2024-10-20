@@ -8,7 +8,7 @@ This repository was once home to a beloved Twitter bot project that brought joy 
 
 ## Bot's Mission 🏥
 
-The bot operated under the Twitter handle [https://twitter.com/HasanIntrovert](https://twitter.com/HasanIntrovert), where it shared adorable cat images and anecdotes daily. However, its significance extended beyond the realm of entertainment. It served as a means to raise funds for those pet owners facing financial challenges when their furry friends needed urgent medical attention. 💰
+The bot operated under the Twitter handle [https://twitter.com/HasanIntrovert](https://twitter.com/HasanCatto), where it shared adorable cat images and anecdotes daily. However, its significance extended beyond the realm of entertainment. It served as a means to raise funds for those pet owners facing financial challenges when their furry friends needed urgent medical attention. 💰
 
 ## The Journey 🌟
 
